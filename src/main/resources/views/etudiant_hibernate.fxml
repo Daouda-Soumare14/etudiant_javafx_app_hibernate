@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="form_etudiant" prefHeight="871.0" prefWidth="1035.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.rachid.etudiant_javafx_app_hibernate.services.EtudiantController">
+    <children>
+        <AnchorPane layoutY="63.0" prefHeight="808.0" prefWidth="172.0" style="-fx-background-color: #065a84;">
+            <children>
+                <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="40.0" layoutY="209.0" size="130.0" tabSize="12" />
+                <Label layoutX="18.0" layoutY="238.0" text="Etudiant" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman" size="40.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btn_form_classe" layoutX="18.0" layoutY="338.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="42.0" prefWidth="137.0" text="Form_Classe">
+                    <font>
+                        <Font name="Times New Roman Bold" size="17.0" />
+                    </font>
+                </Button>
+            </children></AnchorPane>
+        <AnchorPane layoutY="-1.0" prefHeight="64.0" prefWidth="1035.0" style="-fx-background-color: #00a9ff;">
+            <children>
+                <Label layoutX="481.0" layoutY="10.0" text="Etudiant">
+                    <font>
+                        <Font name="Times New Roman Bold" size="40.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="tableVeiw_etudiant" layoutX="203.0" layoutY="131.0" onMouseClicked="#getEtudiant" prefHeight="411.0" prefWidth="817.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="74.0" text="ID" />
+                <TableColumn fx:id="col_matricule" prefWidth="182.0" text="Matricule" />
+                <TableColumn fx:id="col_nom" prefWidth="137.0" text="Nom" />
+                <TableColumn fx:id="col_prenom" prefWidth="177.0" text="Prenom" />
+                <TableColumn fx:id="col_moyenne" prefWidth="113.0" text="Moyenne" />
+                <TableColumn fx:id="col_classe" prefWidth="133.0" text="Classe" />
+            </columns>
+            <effect>
+                <DropShadow height="53.43" radius="21.7925" width="35.74" />
+            </effect>
+        </TableView>
+        <Label layoutX="205.0" layoutY="568.0" text="Matricule">
+            <font>
+                <Font name="Times New Roman" size="25.0" />
+            </font></Label>
+        <TextField fx:id="field_matricule" editable="false" layoutX="203.0" layoutY="597.0" prefHeight="42.0" prefWidth="243.0">
+            <effect>
+                <DropShadow height="53.43" radius="21.7925" width="35.74" />
+            </effect>
+            <font>
+                <Font size="20.0" />
+            </font></TextField>
+        <Label layoutX="205.0" layoutY="645.0" text="Nom">
+            <font>
+                <Font name="Times New Roman" size="25.0" />
+            </font></Label>
+        <TextField fx:id="field_nom" layoutX="203.0" layoutY="674.0" prefHeight="42.0" prefWidth="243.0">
+            <effect>
+                <DropShadow height="53.43" radius="21.7925" width="35.74" />
+            </effect>
+            <font>
+                <Font size="20.0" />
+            </font></TextField>
+        <Label layoutX="493.0" layoutY="567.0" text="Prenom">
+            <font>
+                <Font name="Times New Roman" size="25.0" />
+            </font></Label>
+        <TextField fx:id="field_prenom" layoutX="491.0" layoutY="597.0" prefHeight="42.0" prefWidth="243.0">
+            <effect>
+                <DropShadow height="53.43" radius="21.7925" width="35.74" />
+            </effect>
+            <font>
+                <Font size="20.0" />
+            </font></TextField>
+        <Label layoutX="493.0" layoutY="643.0" text="Moyenne">
+            <font>
+                <Font name="Times New Roman" size="25.0" />
+            </font></Label>
+        <TextField fx:id="field_moyenne" layoutX="491.0" layoutY="675.0" prefHeight="42.0" prefWidth="243.0">
+            <effect>
+                <DropShadow height="53.43" radius="21.7925" width="35.74" />
+            </effect>
+            <font>
+                <Font size="20.0" />
+            </font></TextField>
+        <ComboBox fx:id="comboBox_classe" layoutX="784.0" layoutY="639.0" prefHeight="42.0" prefWidth="237.0" promptText="Selectionner une classe">
+            <effect>
+                <DropShadow height="53.43" radius="21.7925" width="35.74" />
+            </effect>
+        </ComboBox>
+        <ButtonBar layoutX="183.0" layoutY="751.0" prefHeight="64.0" prefWidth="817.0">
+            <buttons>
+                <Button fx:id="btn_add" mnemonicParsing="false" onMouseClicked="#createOrUpdateEtudiant" prefHeight="47.0" prefWidth="423.0" style="-fx-background-color: #007ee5;" text="Save" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="25.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_clear" layoutX="60.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#clearEtudiant" prefHeight="47.0" style="-fx-background-color: #4c4c4c;" text="Clear" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="25.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_delete" layoutX="30.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#deleteEtudiant" prefHeight="47.0" style="-fx-background-color: #ff0000;" text="Delete" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="25.0" />
+                    </font>
+                </Button>
+            </buttons>
+            <effect>
+                <DropShadow height="53.43" radius="21.7925" width="35.74" />
+            </effect>
+        </ButtonBar>
+        <Label layoutX="784.0" layoutY="609.0" text="Classe">
+            <font>
+                <Font name="Times New Roman" size="25.0" />
+            </font>
+        </Label>
+        <TextField fx:id="field_search" alignment="TOP_LEFT" layoutX="205.0" layoutY="72.0" onMouseClicked="#searchEtudiant" prefHeight="42.0" prefWidth="299.0" promptText="Rechercher Etudiant">
+            <font>
+                <Font name="Times New Roman" size="25.0" />
+            </font>
+            <effect>
+                <DropShadow height="50.48" radius="29.1625" width="68.17" />
+            </effect>
+        </TextField>
+        <FontAwesomeIconView glyphName="SEARCH" layoutX="467.0" layoutY="103.0" selectionEnd="1" size="25.0" tabSize="10" />
+    </children>
+</AnchorPane>
